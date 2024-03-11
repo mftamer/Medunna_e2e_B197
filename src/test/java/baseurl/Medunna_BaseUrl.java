@@ -9,16 +9,16 @@ import static utilities.MedunnaAuthentication.generateToken;
 
 public class Medunna_BaseUrl {
 
-    protected RequestSpecification spec;
+    public static RequestSpecification spec;
 
-    @Before
-    public void setUp(){
-
+    public static void setUp(){
         String baseUrl = "https://medunna.com";
-        spec = new RequestSpecBuilder().
-                addHeader("Authorization","Bearer"+generateToken()).
-                setBaseUri(baseUrl).
-                setContentType(ContentType.JSON).
-                build();
+
+        spec = new RequestSpecBuilder()
+                .setContentType(ContentType.JSON)
+                .addHeader("Authorization", "Bearer "+ generateToken())
+                .setBaseUri(baseUrl)
+                .build();
     }
+
 }

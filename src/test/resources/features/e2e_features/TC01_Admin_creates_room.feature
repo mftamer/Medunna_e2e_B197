@@ -1,4 +1,4 @@
-@room_creation
+@room_creation @e2e
 Feature: Admin creates room
   Background:
     Given admin goes to "https://medunna.com/" homepage
